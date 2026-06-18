@@ -27,12 +27,12 @@ HTML
         }
         .slide-container { 
             display: flex; 
-            width: 300%; /* 사진 3장(100% x 3)을 가로로 배치 */
+            width: 400%; /* 사진 4장(100% x 4)을 가로로 배치 */
             height: 100%; 
-            animation: slideAnimation 15s infinite; /* 15초 동안 무한 반복 */
+            animation: slideAnimation 20s infinite; /* 20초 동안 무한 반복 */
         }
         .slide { 
-            width: 33.333%; /* 각 슬라이드가 전체의 1/3씩 차지 */
+            width: 25%; /* 4장이므로 각 슬라이드는 전체의 25% */
             height: 100%; 
             background-size: cover;
             background-position: center; 
@@ -61,12 +61,14 @@ HTML
         /* 📸 사진이 자동으로 넘어가는 애니메이션 효과 (각 사진당 4~5초씩 머묾) */
         @keyframes slideAnimation {
             0% { transform: translateX(0); }
-            28% { transform: translateX(0); }
-            33% { transform: translateX(-33.333%); }
-            61% { transform: translateX(-33.333%); }
-            66% { transform: translateX(-66.666%); }
-            95% { transform: translateX(-66.666%); }
-            100% { transform: translateX(0); }
+            20% { transform: translateX(0); }         /* 첫 번째 사진 멈춤 */
+            25% { transform: translateX(-25%); }      /* 이동 */
+            45% { transform: translateX(-25%); }      /* 두 번째 사진 멈춤 */
+            50% { transform: translateX(-50%); }      /* 이동 */
+            70% { transform: translateX(-50%); }      /* 세 번째 사진 멈춤 */
+            75% { transform: translateX(-75%); }      /* 이동 */
+            95% { transform: translateX(-75%); }      /* 네 번째 사진 멈춤 */
+            100% { transform: translateX(0); }        /* 다시 첫 번째로 이동 */
         }
 
         /* 본문 콘텐츠 공통 구조 */
@@ -117,12 +119,16 @@ HTML
                 <p>사사 · 백서 · 기록물 발간 전문 기업, 주식회사 북스포어</p>
             </div>
             <div class="slide" style="background-image: url('bg-main2.jpg');">
-                <h1>독보적인 노하우와 철저한 아카이빙</h1>
-                <p>기획부터 자료 수집, 집필, 디자인, 인쇄까지 원스톱 책임 제작</p>
+                <h1>시간이 흘러도 변치 않는 가치</h1>
+                <p>역사를 올바르게 기록하여 미래의 이정표를 제시합니다</p>
             </div>
             <div class="slide" style="background-image: url('bg-main3.jpg');">
-                <h1>시간이 흘러도 변치 않는 소장 가치</h1>
-                <p>과거를 올바르게 기록하여 미래의 이정표를 제시합니다</p>
+                <h1>독보적인 노하우와 체계적인 아카이빙</h1>
+                <p>기획부터 자료 수집, 집필, 디자인, 인쇄까지 원스톱 책임 제작</p>
+            </div>
+            <div class="slide" style="background-image: url('bg-main4.jpg');">
+                <h1>최상의 품질과 최고의 가치 실현을 위한 장인정신</h1>
+                <p>진심을 담아 기업 역사의 가치를 높이겠습니다</p>
             </div>
         </div>
     </section>
