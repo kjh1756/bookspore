@@ -11,18 +11,59 @@ HTML
         body { font-family: 'Malgun Gothic', dotum, sans-serif; color: #333; line-height: 1.8; background-color: #ffffff; }
         a { text-decoration: none; color: inherit; }
 
-        /* 헤더/상단 메뉴 */
-        header { background-color: #ffffff; border-bottom: 1px solid #eee; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px; }
-        .logo { font-size: 24px; font-weight: bold; color: #1e3a8a; letter-spacing: 1px; }
-        .menu a { margin-left: 30px; font-weight: 600; color: #555; }
-        .menu a:hover { color: #1e3a8a; }
+/* 🏢 헤더/상단 메뉴 (완벽 좌우 정렬 및 캐시 충돌 방지) */
+header { 
+    background-color: #ffffff !important; 
+    border-bottom: 1px solid #eee !important; 
+    position: fixed !important; 
+    width: 100% !important; 
+    top: 0 !important; 
+    left: 0 !important;
+    z-index: 1000 !important; 
+}
+
+/* 📦 내용물을 1200px 안에 가두고 좌우로 찢어주는 핵심 상자 */
+.nav-container { 
+    max-width: 1200px !important; 
+    margin: 0 auto !important;    /* 화면 한가운데로 정렬 */
+    padding: 18px 20px !important; /* 위아래 공간을 넉넉하게 확장 */
+    display: flex !important; 
+    justify-content: space-between !important; /* 로고는 왼쪽 끝, 메뉴는 오른쪽 끝 */
+    align-items: center !important; 
+}
+
+/* 🏷️ 로고 스타일 */
+.logo { 
+    font-size: 24px !important; 
+    font-weight: bold !important; 
+    color: #1e3a8a !important; 
+    letter-spacing: 1px !important; 
+}
+
+/* 🗂️ 오른쪽 카테고리 메뉴 전체를 감싸는 상자 */
+nav.menu { 
+    display: flex !important; 
+    align-items: center !important; 
+    margin-left: auto !important; /* 왼쪽 여백을 최대로 밀어 오른쪽 끝으로 고정 */
+}
+
+/* 🔗 카테고리 글자 하나하나의 스타일 */
+nav.menu a { 
+    margin-left: 30px !important; 
+    font-weight: 600 !important; 
+    color: #555 !important; 
+    white-space: nowrap !important; /* 글자가 아래로 꺾이지 않게 고정 */
+}
+
+nav.menu a:hover { 
+    color: #1e3a8a !important; 
+}
 
   /* 상단 메인 배너 및 슬라이드 구조 */
         .hero-slider { 
             position: relative; 
             height: 700px; 
-            margin-top: 70px; 
+            margin-top: 85px; 
             overflow: hidden; 
         }
         .slide-container { 
@@ -159,12 +200,14 @@ HTML
 <body>
 
 <header>
-        <div class="logo">주식회사 북스포어</div>
-        <nav>
-            <a href="#about">회사소개</a>
-            <a href="#history">회사연혁</a>
-            <a href="#portfolio">포트폴리오</a> 
-        </nav>
+        <div class="nav-container">
+            <div class="logo">주식회사 북스포어</div>
+            <nav class="menu">
+                <a href="#about">회사소개</a>
+                <a href="#history">회사연혁</a>
+                <a href="#portfolio">포트폴리오</a> 
+            </nav>
+        </div>
     </header>
 
     <!-- 메인 비주얼 배너 -->
@@ -189,10 +232,10 @@ HTML
         </div>
     </section>
 
-    <!-- 인사말 본문 -->
+    <!-- 회사소개 본문 -->
     <main class="container">
-        <section class="intro-section">
-            <h2>대표 인사말</h2>
+        <section id="about" class="intro-section">
+            <h2>회사소개</h2></p>
             <p>모든 기업과 기관에는 저마다의 치열했던 순간과 빛나는 성장의 역사가 있습니다. 하지만 아무리 위대한 역사라도 올바르게 기록되지 않는다면 시간이 흐름에 따라 희미해지기 마련입니다.</p>
             <p>주식회사 북스포어는 단순히 글을 모아 인쇄하는 '책'을 만들지 않습니다. 우리는 기업이 걸어온 발자취를 집요하게 추적하고, 그 속에 담긴 땀방울과 가치를 발굴하여 후대에 전할 <strong>'가장 완벽한 아카이브(Archive)'</strong>를 구축합니다.</p>
             <p>지난 시간 현장에서 쌓아온 독보적인 노하우를 바탕으로, 기획부터 자료 수집, 전문 집필, 세련된 디자인, 그리고 정교한 인쇄에 이르기까지 전 과정을 원스톱(One-Stop)으로 책임집니다.</p>
@@ -343,7 +386,7 @@ HTML
             <div class="portfolio-item">
                 <div class="portfolio-img" style="background-image: url('port2.jpg');"></div>
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">공공 백서</span>
+                    <span class="portfolio-tag">백서</span>
                     <h3>KISTA, 혁신기술의 미래를 이끌다</h3>
                     <p>한국특허전략개발원 5,000일의 기록</p>
                 </div>
