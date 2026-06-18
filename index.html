@@ -18,10 +18,56 @@ HTML
         .menu a { margin-left: 30px; font-weight: 600; color: #555; }
         .menu a:hover { color: #1e3a8a; }
 
-        /* 상단 메인 배너 */
-        .hero-section { background: url('bg-main.jpg'); height: 700px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 20px; margin-top: 70px; background-size: cover; }
-        .hero-section h1 { font-size: 38px; margin-bottom: 15px; font-weight: bold; letter-spacing: -0.5px; }
-        .hero-section p { font-size: 18px; color: #cbd5e1; }
+  /* 상단 메인 배너 및 슬라이드 구조 */
+        .hero-slider { 
+            position: relative; 
+            height: 700px; 
+            margin-top: 70px; 
+            overflow: hidden; 
+        }
+        .slide-container { 
+            display: flex; 
+            width: 300%; /* 사진 3장(100% x 3)을 가로로 배치 */
+            height: 100%; 
+            animation: slideAnimation 15s infinite; /* 15초 동안 무한 반복 */
+        }
+        .slide { 
+            width: 33.333%; /* 각 슬라이드가 전체의 1/3씩 차지 */
+            height: 100%; 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            color: #fff; 
+            padding: 20px; 
+            position: relative;
+        }
+        /* 사진 위에 어두운 오버레이를 깔아 글자가 잘 보이게 처리 */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(30, 58, 138, 0.5), rgba(15, 23, 42, 0.7));
+            z-index: 1;
+        }
+        .slide h1, .slide p { position: relative; z-index: 2; }
+        .slide h1 { font-size: 38px; margin-bottom: 15px; font-weight: bold; letter-spacing: -0.5px; }
+        .slide p { font-size: 18px; color: #cbd5e1; }
+
+        /* 📸 사진이 자동으로 넘어가는 애니메이션 효과 (각 사진당 4~5초씩 머묾) */
+        @keyframes slideAnimation {
+            0% { transform: translateX(0); }
+            28% { transform: translateX(0); }
+            33% { transform: translateX(-33.333%); }
+            61% { transform: translateX(-33.333%); }
+            66% { transform: translateX(-66.666%); }
+            95% { transform: translateX(-66.666%); }
+            100% { transform: translateX(0); }
+        }
 
         /* 본문 콘텐츠 공통 구조 */
         .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
@@ -64,9 +110,21 @@ HTML
     </header>
 
     <!-- 메인 비주얼 배너 -->
-    <section class="hero-section">
-        <h1>기록을 넘어 기업의 역사와 가치를 남깁니다</h1>
-        <p>사사 · 백서 · 기록물 발간 전문 기업, 주식회사 북스포어</p>
+    <section class="hero-slider">
+        <div class="slide-container">
+            <div class="slide" style="background-image: url('bg-main1.jpg');">
+                <h1>기록을 넘어 기업의 역사와 가치를 남깁니다</h1>
+                <p>사사 · 백서 · 기록물 발간 전문 기업, 주식회사 북스포어</p>
+            </div>
+            <div class="slide" style="background-image: url('bg-main2.jpg');">
+                <h1>독보적인 노하우와 철저한 아카이빙</h1>
+                <p>기획부터 자료 수집, 집필, 디자인, 인쇄까지 원스톱 책임 제작</p>
+            </div>
+            <div class="slide" style="background-image: url('bg-main3.jpg');">
+                <h1>시간이 흘러도 변치 않는 소장 가치</h1>
+                <p>과거를 올바르게 기록하여 미래의 이정표를 제시합니다</p>
+            </div>
+        </div>
     </section>
 
     <!-- 인사말 본문 -->
