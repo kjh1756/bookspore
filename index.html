@@ -23,14 +23,27 @@ HTML
         .hero-section h1 { font-size: 38px; margin-bottom: 15px; font-weight: bold; letter-spacing: -0.5px; }
         .hero-section p { font-size: 18px; color: #cbd5e1; }
 
-        /* 본문 콘텐츠 섹션 */
+        /* 본문 콘텐츠 공통 구조 */
         .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        section { padding-top: 40px; margin-bottom: 60px; }
+        h2.section-title { font-size: 28px; color: #1e3a8a; margin-bottom: 30px; border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; }
         
         /* 인사말 스타일 */
-        .intro-section { background: #fff; padding: 50px 40px; border-radius: 8px; }
-        .intro-section h2 { font-size: 28px; color: #1e3a8a; margin-bottom: 30px; border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; }
         .intro-section p { margin-bottom: 20px; font-size: 16px; text-align: justify; color: #475569; }
         .ceo-sign { text-align: right; margin-top: 40px; font-size: 18px; font-weight: bold; color: #1e3a8a; }
+
+        /* 타임라인 연혁 스타일 */
+        .history-container { position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; margin-top: 20px; }
+        .history-year-group { margin-bottom: 40px; position: relative; }
+        
+        /* 연도 옆에 붙는 동그라미 포인트 */
+        .history-year-group::before { content: ''; position: absolute; left: -36px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background-color: #1e3a8a; border: 2px solid #fff; box-shadow: 0 0 0 2px #1e3a8a; }
+        
+        .history-year { font-size: 22px; font-weight: bold; color: #1e3a8a; margin-bottom: 15px; display: inline-block; }
+        .history-list { list-style: none; }
+        .history-item { display: flex; margin-bottom: 12px; font-size: 15px; color: #475569; align-items: flex-start; }
+        .history-month { font-weight: bold; color: #0f172a; min-width: 60px; padding-right: 15px; }
+        .history-content { flex: 1; }
 
         /* 푸터/하단 정보 */
         footer { background-color: #1e293b; color: #94a3b8; text-align: center; padding: 30px 20px; font-size: 14px; }
@@ -39,16 +52,14 @@ HTML
 </head>
 <body>
 
-    <!-- 상단 네비게이션 -->
     <header>
         <div class="nav-container">
-            <div class="logo">BOOKSPORE</div>
+            <div class="logo"><a href="#">BOOKSPORE</a></div>
             <div class="menu">
                 <a href="#">홈</a>
-                <a href="#">회사소개</a>
-                <a href="#">제작실적</a>
-                <a href="#">제작공정</a>
-                <a href="#">문의하기</a>
+                <a href="#about">회사소개</a>
+                <a href="#history">회사연혁</a>
+                <a href="mailto:contact@bookspore.com">문의하기</a>
             </div>
         </div>
     </header>
@@ -70,6 +81,130 @@ HTML
             <p>과거를 올바르게 기록하여 미래의 이정표를 세우는 길, 그 뜻깊은 여정에 북스포어가 든든한 파트너로 함께하겠습니다.</p>
             
             <div class="ceo-sign">주식회사 북스포어 대표</div>
+        </section>
+
+        <section id="history">
+            <h2 class="section-title">회사 연혁</h2>
+            <div class="history-container">
+
+                <div class="history-year-group">
+                    <span class="history-year">2026</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">06월</span><span class="history-content">『국민연금 개혁 백서』 편찬 중</span></li>
+                        <li class="history-item"><span class="history-month">04월</span><span class="history-content">북스포어 1호 지점 '북디자인랩' 설립</span></li>
+                        <li class="history-item"><span class="history-month">03월</span><span class="history-content">『한국철도기술연구원 30년사』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">03월</span><span class="history-content">『길이 되다, 미래를 달리다-Next 30』 편찬, 제작</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2025</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">11월</span><span class="history-content">이천시장 자서전 편찬, 제작</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2024</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">12월</span><span class="history-content">『한국특허전략개발원 15주년 백서』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">08월</span><span class="history-content">『창원국가산업단지 50년사』 집필</span></li>
+                        <li class="history-item"><span class="history-month">03월</span><span class="history-content">『고속철도 20년, 도시철도 50년』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">02월</span><span class="history-content">『광명동부 새마을금고 50년사』 편찬, 제작</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2023</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">02월</span><span class="history-content">소설 『타르사막』 출판</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2022</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">06월</span><span class="history-content">본사 이전 (송도AT센터)</span></li>
+                        <li class="history-item"><span class="history-month">05월</span><span class="history-content">『코리아나화장품 유상옥 회장 에세이』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">05월</span><span class="history-content">『세계한상대회 10년사』(재외동포재단) 집필, 진행</span></li>
+                        <li class="history-item"><span class="history-month">05월</span><span class="history-content">『한국수자원공사 합천 수상태양광 성공 사례집』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">04월</span><span class="history-content">『생활 가까이, 신기하고 재미있는 철도기술』 편찬, 제작</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2021</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">11월</span><span class="history-content">『2021 서울가족보고서』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">10월</span><span class="history-content">『한재공익재단 홍보 브로슈어』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">07월</span><span class="history-content">『2020 서울물워터 연구보고서』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">03월</span><span class="history-content">교보교육재단 가족소통캠프 교재 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">03월</span><span class="history-content">『대한민국시도지사협의회 코로나19 백서』 집필</span></li>
+                        <li class="history-item"><span class="history-month">01월</span><span class="history-content">『LH 한국토지주택공사 홍보 매뉴얼』 집필</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2020</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">12월</span><span class="history-content">『서울물연구원 홍보 브로슈어』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">08월</span><span class="history-content">『서울시 코로나19 백서』(서울특별시) 집필</span></li>
+                        <li class="history-item"><span class="history-month">06월</span><span class="history-content">『2019 서울물워터 연구보고서』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">02월</span><span class="history-content">『소비자운동가 정광모 회장 평전』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">01월</span><span class="history-content">『한국소비자연맹 50년사』 편찬, 제작</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2019</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">12월</span><span class="history-content">『인천시 공공도서관 여행 신간추천서』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">12월</span><span class="history-content">『서울물연구원 2019국제심포지엄 결과보고서』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">11월</span><span class="history-content">『S-OIL 울산공장 준공식 결과보고서』 집필</span></li>
+                        <li class="history-item"><span class="history-month">01월</span><span class="history-content">『코리아나화장품 30년사』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">01월</span><span class="history-content">직접생산확인업체 인증 (중소기업중앙회)</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2018</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">12월</span><span class="history-content">『한국산업기술진흥원 10년사』 집필</span></li>
+                        <li class="history-item"><span class="history-month">12월</span><span class="history-content">『서울물연구원 30주년 활동보고서』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">11월</span><span class="history-content">『월급쟁이 30년, CEO 30년 유상옥 회장 회고록』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">10월</span><span class="history-content">여성기업 인증</span></li>
+                        <li class="history-item"><span class="history-month">09월</span><span class="history-content">인쇄사 등록</span></li>
+                        <li class="history-item"><span class="history-month">08월</span><span class="history-content">『한국전력공사 송주법 지원 우수 사례집』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">07월</span><span class="history-content">출판사 등록</span></li>
+                        <li class="history-item"><span class="history-month">07월</span><span class="history-content">『한국전력공사 갈등관리 우수 사례집』 편찬, 제작</span></li>
+                        <li class="history-item"><span class="history-month">05월</span><span class="history-content">『재외동포재단 20년사』 집필, 편찬 진행</span></li>
+                        <li class="history-item"><span class="history-month">02월</span><span class="history-content">『해양환경관리공단 10년사』 집필, 편찬 진행</span></li>
+                        <li class="history-item"><span class="history-month">01월</span><span class="history-content">주식회사 북스포어 법인 전환</span></li>
+                        <li class="history-item"><span class="history-month">01월</span><span class="history-content">『영등포구청 성과 보고서』 집필</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2017</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">10월</span><span class="history-content">『성도교회 70년사』 편찬</span></li>
+                        <li class="history-item"><span class="history-month">06월</span><span class="history-content">『한상(韓商) 세계를 품다』 글로벌 리더스 스토리북 집필</span></li>
+                        <li class="history-item"><span class="history-month">06월</span><span class="history-content">『삼성생명 60년사』 집필</span></li>
+                        <li class="history-item"><span class="history-month">02월</span><span class="history-content">『예술꽃씨앗학교 8년』(한국교육문화진흥원) 집필</span></li>
+                        <li class="history-item"><span class="history-month">01월</span><span class="history-content">『해양수산부 20년사』 집필</span></li>
+                    </ul>
+                </div>
+
+                <div class="history-year-group">
+                    <span class="history-year">2016</span>
+                    <ul class="history-list">
+                        <li class="history-item"><span class="history-month">12월</span><span class="history-content">『OK저축은행 배구단 우승 스토리북』 집필</span></li>
+                        <li class="history-item"><span class="history-month">11월</span><span class="history-content">북스포어 사사출판전문업체 설립</span></li>
+                        <li class="history-item"><span class="history-month">11월</span><span class="history-content">『한국경영기술지도사회 30년사』 기획 진행, 집필</span></li>
+                    </ul>
+                </div>
+
+            </div>
         </section>
     </main>
 
