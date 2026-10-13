@@ -11,55 +11,55 @@ HTML
         body { font-family: 'Malgun Gothic', dotum, sans-serif; color: #333; line-height: 1.8; background-color: #ffffff; }
         a { text-decoration: none; color: inherit; }
 
-/* 🏢 헤더/상단 메뉴 (완벽 좌우 정렬 및 캐시 충돌 방지) */
-header { 
-    background-color: #ffffff !important; 
-    border-bottom: 1px solid #eee !important; 
-    position: fixed !important; 
-    width: 100% !important; 
-    top: 0 !important; 
-    left: 0 !important;
-    z-index: 1000 !important; 
-}
+        /* 🏢 헤더/상단 메뉴 (완벽 좌우 정렬 및 캐시 충돌 방지) */
+        header { 
+            background-color: #ffffff !important; 
+            border-bottom: 1px solid #eee !important; 
+            position: fixed !important; 
+            width: 100% !important; 
+            top: 0 !important; 
+            left: 0 !important;
+            z-index: 1000 !important; 
+        }
 
-/* 📦 내용물을 1200px 안에 가두고 좌우로 찢어주는 핵심 상자 */
-.nav-container { 
-    max-width: 1200px !important; 
-    margin: 0 auto !important;    /* 화면 한가운데로 정렬 */
-    padding: 18px 20px !important; /* 위아래 공간을 넉넉하게 확장 */
-    display: flex !important; 
-    justify-content: space-between !important; /* 로고는 왼쪽 끝, 메뉴는 오른쪽 끝 */
-    align-items: center !important; 
-}
+        /* 📦 내용물을 1200px 안에 가두고 좌우로 찢어주는 핵심 상자 */
+        .nav-container { 
+            max-width: 1200px !important; 
+            margin: 0 auto !important;    
+            padding: 18px 20px !important; 
+            display: flex !important; 
+            justify-content: space-between !important; 
+            align-items: center !important; 
+        }
 
-/* 🏷️ 로고 스타일 */
-.logo { 
-    font-size: 24px !important; 
-    font-weight: bold !important; 
-    color: #1e3a8a !important; 
-    letter-spacing: 1px !important; 
-}
+        /* 🏷️ 로고 스타일 */
+        .logo { 
+            font-size: 24px !important; 
+            font-weight: bold !important; 
+            color: #1e3a8a !important; 
+            letter-spacing: 1px !important; 
+        }
 
-/* 🗂️ 오른쪽 카테고리 메뉴 전체를 감싸는 상자 */
-nav.menu { 
-    display: flex !important; 
-    align-items: center !important; 
-    margin-left: auto !important; /* 왼쪽 여백을 최대로 밀어 오른쪽 끝으로 고정 */
-}
+        /* 🗂️ 오른쪽 카테고리 메뉴 전체를 감싸는 상자 */
+        nav.menu { 
+            display: flex !important; 
+            align-items: center !important; 
+            margin-left: auto !important; 
+        }
 
-/* 🔗 카테고리 글자 하나하나의 스타일 */
-nav.menu a { 
-    margin-left: 30px !important; 
-    font-weight: 600 !important; 
-    color: #555 !important; 
-    white-space: nowrap !important; /* 글자가 아래로 꺾이지 않게 고정 */
-}
+        /* 🔗 카테고리 글자 하나하나의 스타일 */
+        nav.menu a { 
+            margin-left: 30px !important; 
+            font-weight: 600 !important; 
+            color: #555 !important; 
+            white-space: nowrap !important; 
+        }
 
-nav.menu a:hover { 
-    color: #1e3a8a !important; 
-}
+        nav.menu a:hover { 
+            color: #1e3a8a !important; 
+        }
 
-  /* 상단 메인 배너 및 슬라이드 구조 */
+        /* 상단 메인 배너 및 슬라이드 구조 */
         .hero-slider { 
             position: relative; 
             height: 700px; 
@@ -68,12 +68,12 @@ nav.menu a:hover {
         }
         .slide-container { 
             display: flex; 
-            width: 400%; /* 사진 4장(100% x 4)을 가로로 배치 */
+            width: 400%; 
             height: 100%; 
-            animation: slideAnimation 20s infinite; /* 20초 동안 무한 반복 */
+            animation: slideAnimation 20s infinite; 
         }
         .slide { 
-            width: 25%; /* 4장이므로 각 슬라이드는 전체의 25% */
+            width: 25%; 
             height: 100%; 
             background-size: cover;
             background-position: center; 
@@ -87,7 +87,6 @@ nav.menu a:hover {
             padding: 20px; 
             position: relative;
         }
-        /* 사진 위에 어두운 오버레이를 깔아 글자가 잘 보이게 처리 */
         .slide::before {
             content: '';
             position: absolute;
@@ -99,17 +98,16 @@ nav.menu a:hover {
         .slide h1 { font-size: 38px; margin-bottom: 15px; font-weight: bold; letter-spacing: -0.5px; }
         .slide p { font-size: 18px; color: #cbd5e1; }
 
-        /* 📸 사진이 자동으로 넘어가는 애니메이션 효과 (각 사진당 4~5초씩 머묾) */
         @keyframes slideAnimation {
             0% { transform: translateX(0); }
-            20% { transform: translateX(0); }         /* 첫 번째 사진 멈춤 */
-            25% { transform: translateX(-25%); }      /* 이동 */
-            45% { transform: translateX(-25%); }      /* 두 번째 사진 멈춤 */
-            50% { transform: translateX(-50%); }      /* 이동 */
-            70% { transform: translateX(-50%); }      /* 세 번째 사진 멈춤 */
-            75% { transform: translateX(-75%); }      /* 이동 */
-            95% { transform: translateX(-75%); }      /* 네 번째 사진 멈춤 */
-            100% { transform: translateX(0); }        /* 다시 첫 번째로 이동 */
+            20% { transform: translateX(0); }         
+            25% { transform: translateX(-25%); }      
+            45% { transform: translateX(-25%); }      
+            50% { transform: translateX(-50%); }      
+            70% { transform: translateX(-50%); }      
+            75% { transform: translateX(-75%); }      
+            95% { transform: translateX(-75%); }      
+            100% { transform: translateX(0); }        
         }
 
         /* 본문 콘텐츠 공통 구조 */
@@ -124,8 +122,6 @@ nav.menu a:hover {
         /* 타임라인 연혁 스타일 */
         .history-container { position: relative; padding-left: 60px; border-left: 0.75px solid #e2e8f0; margin-top: 20px; }
         .history-year-group { margin-bottom: 40px; position: relative; }
-        
-        /* 연도 옆에 붙는 동그라미 포인트 */
         .history-year-group::before { content: ''; position: absolute; left: -66px; top: 11px; width: 12px; height: 12px; border-radius: 50%; background-color: #a1a1a1; border: none; box-shadow: none; z-index: 2; }        
         .history-year { font-size: 22px; font-weight: bold; color: #1e3a8a; margin-bottom: 15px; display: inline-block; }
         .history-list { list-style: none; }
@@ -137,8 +133,8 @@ nav.menu a:hover {
         footer { background-color: #1e293b; color: #94a3b8; text-align: center; padding: 30px 20px; font-size: 14px; }
         footer p { margin-bottom: 5px; }
         
-        /* 🎨 포트폴리오 섹션 스타일 */
-        ..portfolio-section {
+        /* 🎨 포트폴리오 섹션 스타일 (오타 수정) */
+        .portfolio-section {
             padding: 80px 20px;
             background-color: #ffffff;
             max-width: 1200px;
@@ -159,14 +155,13 @@ nav.menu a:hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
-        /* 마우스를 올렸을 때 살짝 떠오르는 효과 */
         .portfolio-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 20px rgba(0,0,0,0.1);
         }
         .portfolio-img {
             width: 100%;
-            height: 350px; /* 책 표지 비율에 맞춘 넉넉한 높이 */
+            height: 350px; 
             background-size: cover;
             background-position: center;
             border-bottom: 1px solid #e2e8f0;
@@ -195,7 +190,8 @@ nav.menu a:hover {
             color: #64748b;
             line-height: 1.5;
         }
-/* 🖼️ 이미지 확대 팝업(모달) 스타일 */
+
+        /* 🖼️ 이미지 확대 팝업(모달) 스타일 */
         .modal {
             display: none;
             position: fixed;
@@ -207,7 +203,6 @@ nav.menu a:hover {
             justify-content: center;
             padding: 20px;
         }
-
         .modal-content {
             max-width: 90%;
             max-height: 90vh;
@@ -215,7 +210,6 @@ nav.menu a:hover {
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             object-fit: contain;
         }
-
         .modal-close {
             position: absolute;
             top: 20px; right: 35px;
@@ -225,18 +219,14 @@ nav.menu a:hover {
             cursor: pointer;
             transition: color 0.2s;
         }
-
         .modal-close:hover {
             color: #94a3b8;
         }
-
-    </style>  <--- 2. 닫히는 </style> 태그 바로 위에 붙여넣으시면 됩니다!
-</head>
     </style>
 </head>
 <body>
 
-<header>
+    <header>
         <div class="nav-container">
             <div class="logo">주식회사 북스포어</div>
             <nav class="menu">
@@ -272,7 +262,7 @@ nav.menu a:hover {
     <!-- 회사소개 본문 -->
     <main class="container">
         <section id="about" class="intro-section">
-            <h2>회사소개</h2></p>
+            <h2>회사소개</h2>
             <p>모든 기업과 기관에는 저마다의 치열했던 순간과 빛나는 성장의 역사가 있습니다. 하지만 아무리 위대한 역사라도 올바르게 기록되지 않는다면 시간이 흐름에 따라 희미해지기 마련입니다.</p>
             <p>주식회사 북스포어는 단순히 글을 모아 인쇄하는 '책'을 만들지 않습니다. 우리는 기업이 걸어온 발자취를 집요하게 추적하고, 그 속에 담긴 땀방울과 가치를 발굴하여 후대에 전할 <strong>'가장 완벽한 아카이브(Archive)'</strong>를 구축합니다.</p>
             <p>지난 시간 현장에서 쌓아온 독보적인 노하우를 바탕으로, 기획부터 자료 수집, 전문 집필, 세련된 디자인, 그리고 정교한 인쇄에 이르기까지 전 과정을 원스톱(One-Stop)으로 책임집니다.</p>
@@ -285,7 +275,6 @@ nav.menu a:hover {
         <section id="history">
             <h2 class="section-title">회사 연혁</h2>
             <div class="history-container">
-
                 <div class="history-year-group">
                     <span class="history-year">2026</span>
                     <ul class="history-list">
@@ -402,16 +391,16 @@ nav.menu a:hover {
                         <li class="history-item"><span class="history-month">11월</span><span class="history-content">『한국경영기술지도사회 30년사』 기획 진행, 집필</span></li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
-<section id="portfolio" class="portfolio-section">
+        <!-- 포트폴리오 섹션 -->
+        <section id="portfolio" class="portfolio-section">
             <h2 class="section-title">포트폴리오</h2>
             <p style="text-align: center; color: #64748b; margin-top: -10px;">북스포어가 정성과 신뢰로 엮어낸 소중한 기록들입니다.</p>
             
             <div class="portfolio-grid">
-                <!-- 프로젝트 1: 공공기관 사사 -->
+                <!-- 프로젝트 1 -->
                 <div class="portfolio-item" onclick="openModal('port1.jpg')">
                     <div class="portfolio-img" style="background-image: url('port1.jpg');"></div>
                     <div class="portfolio-info">
@@ -421,7 +410,7 @@ nav.menu a:hover {
                     </div>
                 </div>
 
-                <!-- 프로젝트 2: 한국특허전략개발원 백서 -->
+                <!-- 프로젝트 2 -->
                 <div class="portfolio-item" onclick="openModal('port2.jpg')">
                     <div class="portfolio-img" style="background-image: url('port2.jpg');"></div>
                     <div class="portfolio-info">
@@ -429,7 +418,6 @@ nav.menu a:hover {
                         <h3>한국특허전략개발원 5,000일의 기록</h3>
                         <p style="font-weight: 600; color: #334155; margin-bottom: 8px;">KISTA, 혁신기술의 미래를 이끌다</p>
                         
-                        <!-- 📋 제작 상세 사양 구역 -->
                         <div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 10px 12px; border-radius: 6px; border: 1px solid #f1f5f9; line-height: 1.6; margin-top: 8px;">
                             • <strong>규격 :</strong> 190×250mm / 무선제본<br>
                             • <strong>표지 :</strong> 랑데뷰 울트라화이트 230g (날개 70mm)<br>
@@ -440,7 +428,7 @@ nav.menu a:hover {
                     </div>
                 </div>
 
-                <!-- 프로젝트 3: 기업 사사 -->
+                <!-- 프로젝트 3 -->
                 <div class="portfolio-item" onclick="openModal('port3.jpg')">
                     <div class="portfolio-img" style="background-image: url('port3.jpg');"></div>
                     <div class="portfolio-info">
@@ -451,12 +439,19 @@ nav.menu a:hover {
                 </div>
             </div>
         </section>
+    </main>
 
-    <!-- 🖼️ 이미지 확대 팝업 모달 영역 (</body> 태그 바로 위에 추가) -->
+    <!-- 🖼️ 이미지 확대 팝업 모달 영역 -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="modal-close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImg" onclick="event.stopPropagation()">
     </div>
+
+    <!-- 하단 정보 -->
+    <footer>
+        <p>© 2016 주식회사 북스포어. All Rights Reserved.</p>
+        <p>연락처: 032-817-4409 | 이메일: bookspore@naver.com | 웹사이트: www.bookspore.com  | 주소: 인천광역시 연수구 송도과학로70 송도AT센터</p>
+    </footer>
 
     <script>
         function openModal(imageSrc) {
@@ -471,21 +466,11 @@ nav.menu a:hover {
             modal.style.display = "none";
         }
 
-        // ESC 키 눌렀을 때 팝업 닫기
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape") {
                 closeModal();
             }
         });
     </script>
-
-    </main>
-
-    <!-- 하단 정보 -->
-    <footer>
-        <p>© 2016 주식회사 북스포어. All Rights Reserved.</p>
-        <p>연락처: 032-817-4409 | 이메일: bookspore@naver.com | 웹사이트: www.bookspore.com  | 주소: 인천광역시 연수구 송도과학로70 송도AT센터</p>
-    </footer>
-
 </body>
 </html>
