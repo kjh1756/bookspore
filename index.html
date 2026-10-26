@@ -426,13 +426,13 @@ HTML
             </div>
         </section>
 
-        <!-- 포트폴리오 섹션 -->
+        !-- 포트폴리오 섹션 -->
         <section id="portfolio" class="portfolio-section">
             <h2 class="section-title">포트폴리오</h2>
             <p style="text-align: center; color: #64748b; margin-top: -10px;">북스포어가 정성과 신뢰로 엮어낸 소중한 기록들입니다.</p>
             
             <div class="portfolio-grid">
-                <!-- 프로젝트 1: 한국식품연구원 40년사 -->
+                <!-- 프로젝트 1: 한국식품연구원 40년사 (맨 앞 배치) -->
                 <div class="portfolio-item" onclick="openModal(['port11.jpg'])">
                     <div class="portfolio-img" style="background-image: url('port11.jpg');"></div>
                     <div class="portfolio-info">
@@ -446,7 +446,21 @@ HTML
                     </div>
                 </div>
 
-                <!-- 프로젝트 2: 한국철도기술연구원 30년사 (사진 4장) -->
+                <!-- 프로젝트 2: 제3차 국민연금 개혁 백서 (2번째로 이동) -->
+                <div class="portfolio-item" onclick="openModal(['port4.jpg'])">
+                    <div class="portfolio-img" style="background-image: url('port4.jpg');"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">공공 백서</span>
+                        <h3>제3차 국민연금 개혁 백서</h3>
+                        <p style="font-weight: 600; color: #334155; margin-bottom: 8px;">국민의 내일을 위한 1,000일의 기록</p>
+                        <div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 10px 12px; border-radius: 6px; border: 1px solid #f1f5f9; line-height: 1.6; margin-top: 8px;">
+                            • <strong>규격/사양 :</strong> 제작 진행 중<br>
+                            <span style="color: #1e3a8a; font-size: 12px; font-weight: bold; display: inline-block; margin-top: 6px;">(📷 클릭해서 확대 보기)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 프로젝트 3: 한국철도기술연구원 30년사 (사진 4장) -->
                 <div class="portfolio-item" onclick="openModal(['port1.jpg', 'port1-2.jpg', 'port1-3.jpg', 'port1-4.jpg'])">
                     <div class="portfolio-img" style="background-image: url('port1.jpg');"></div>
                     <div class="portfolio-info">
@@ -468,7 +482,7 @@ HTML
                     </div>
                 </div>
 
-                <!-- 프로젝트 3: 한국특허전략개발원 5,000일의 기록 (사진 1장) -->
+                <!-- 프로젝트 4: 한국특허전략개발원 5,000일의 기록 (사진 1장) -->
                 <div class="portfolio-item" onclick="openModal(['port2.jpg'])">
                     <div class="portfolio-img" style="background-image: url('port2.jpg');"></div>
                     <div class="portfolio-info">
@@ -486,27 +500,13 @@ HTML
                     </div>
                 </div>
 
-                <!-- 프로젝트 4: 코리아나화장품 30년사 (사진 4장) -->
+                <!-- 프로젝트 5: 코리아나화장품 30년사 (사진 4장) -->
                 <div class="portfolio-item" onclick="openModal(['port3.jpg', 'port3-2.jpg', 'port3-3.jpg', 'port3-4.jpg'])">
                     <div class="portfolio-img" style="background-image: url('port3.jpg');"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">기업 사사</span>
                         <h3>코리아나화장품 30년사</h3>
                         <p>현장의 생생한 순간들을 고화질 사진과 감성적인 캡션으로 엮은 아카이브 화보집 <br><span style="color: #1e3a8a; font-size: 12px; font-weight: bold;">(📷 클릭해서 4장 모두 보기)</span></p>
-                    </div>
-                </div>
-
-                <!-- 프로젝트 5: 제3차 국민연금 개혁 백서 (사진 1장) -->
-                <div class="portfolio-item" onclick="openModal(['port4.jpg'])">
-                    <div class="portfolio-img" style="background-image: url('port4.jpg');"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">공공 백서</span>
-                        <h3>제3차 국민연금 개혁 백서</h3>
-                        <p style="font-weight: 600; color: #334155; margin-bottom: 8px;">국민의 내일을 위한 1,000일의 기록</p>
-                        <div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 10px 12px; border-radius: 6px; border: 1px solid #f1f5f9; line-height: 1.6; margin-top: 8px;">
-                            • <strong>규격/사양 :</strong> 제작 진행 중<br>
-                            <span style="color: #1e3a8a; font-size: 12px; font-weight: bold; display: inline-block; margin-top: 6px;">(📷 클릭해서 확대 보기)</span>
-                        </div>
                     </div>
                 </div>
 
@@ -580,7 +580,7 @@ HTML
                     </div>
                 </div>
 
-                <!-- 프로젝트 11: 한국수자원공사 합천댐 수상태양광 성공 사례집 (맨 끝으로 이동 / 사진 3장) -->
+                <!-- 프로젝트 11: 한국수자원공사 합천댐 수상태양광 성공 사례집 (사진 3장) -->
                 <div class="portfolio-item" onclick="openModal(['port8.jpg', 'port8-2.jpg', 'port8-3.jpg'])">
                     <div class="portfolio-img" style="background-image: url('port8.jpg');"></div>
                     <div class="portfolio-info">
@@ -590,6 +590,48 @@ HTML
                         <div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 10px 12px; border-radius: 6px; border: 1px solid #f1f5f9; line-height: 1.6; margin-top: 8px;">
                             • <strong>규격/사양 :</strong> 준비 중<br>
                             <span style="color: #1e3a8a; font-size: 12px; font-weight: bold; display: inline-block; margin-top: 6px;">(📷 클릭해서 3장 모두 보기)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 프로젝트 12: 서울물연구원 30주년 기념 보고서 (신규 추가) -->
+                <div class="portfolio-item" onclick="openModal(['port12.jpg'])">
+                    <div class="portfolio-img" style="background-image: url('port12.jpg');"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">연구원 보고서</span>
+                        <h3>서울물연구원 30주년 기념 보고서</h3>
+                        <p style="font-weight: 600; color: #334155; margin-bottom: 8px;">맑고 깨끗한 물을 향한 30년의 연구와 헌신</p>
+                        <div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 10px 12px; border-radius: 6px; border: 1px solid #f1f5f9; line-height: 1.6; margin-top: 8px;">
+                            • <strong>규격/사양 :</strong> 준비 중<br>
+                            <span style="color: #1e3a8a; font-size: 12px; font-weight: bold; display: inline-block; margin-top: 6px;">(📷 클릭해서 확대 보기)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 프로젝트 13: 서울물연구원 브로슈어 (신규 추가) -->
+                <div class="portfolio-item" onclick="openModal(['port13.jpg'])">
+                    <div class="portfolio-img" style="background-image: url('port13.jpg');"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">기관 브로슈어</span>
+                        <h3>서울물연구원 브로슈어</h3>
+                        <p style="font-weight: 600; color: #334155; margin-bottom: 8px;">세계 최고 수준의 수돗물 연구, 그 비전과 역량</p>
+                        <div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 10px 12px; border-radius: 6px; border: 1px solid #f1f5f9; line-height: 1.6; margin-top: 8px;">
+                            • <strong>규격/사양 :</strong> 준비 중<br>
+                            <span style="color: #1e3a8a; font-size: 12px; font-weight: bold; display: inline-block; margin-top: 6px;">(📷 클릭해서 확대 보기)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 프로젝트 14: 서울물연구원 서울워터 (신규 추가) -->
+                <div class="portfolio-item" onclick="openModal(['port14.jpg'])">
+                    <div class="portfolio-img" style="background-image: url('port14.jpg');"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">정기 간행물</span>
+                        <h3>서울물연구원 서울워터</h3>
+                        <p style="font-weight: 600; color: #334155; margin-bottom: 8px;">물과 환경의 소식을 전하는 전문 매거진</p>
+                        <div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 10px 12px; border-radius: 6px; border: 1px solid #f1f5f9; line-height: 1.6; margin-top: 8px;">
+                            • <strong>규격/사양 :</strong> 준비 중<br>
+                            <span style="color: #1e3a8a; font-size: 12px; font-weight: bold; display: inline-block; margin-top: 6px;">(📷 클릭해서 확대 보기)</span>
                         </div>
                     </div>
                 </div>
